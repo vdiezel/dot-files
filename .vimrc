@@ -40,6 +40,7 @@ Plugin 'rking/ag.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'rakr/vim-one'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'airblade/vim-gitgutter'
 
 "highlights trailing and between/pre tab whitespaces
 "highlight whitespaces between/preceeding tabs
@@ -148,9 +149,18 @@ vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
 
 set cursorline "highlights line cursor is on
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
 set scrolloff=5
+
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;red\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal
+endif
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -158,4 +168,13 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 set number
+" line breaks on enter press
+" line breaks on enter press
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+map <C-n> :NERDTreeToggle<CR>
+nmap <Leader>f :NERDTreeFind<CR>
+nmap <Leader>r :NERDTreeRefreshRoot
+let g:gitgutter_async=0
+let NERDTreeShowHidden=1
 
