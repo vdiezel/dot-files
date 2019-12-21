@@ -29,8 +29,12 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'sonph/onehalf', { 'rtp': 'vim/' }
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+"Plugin 'scrooloose/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'mxw/vim-jsx'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'valloric/youcompleteme'
@@ -38,9 +42,9 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'rking/ag.vim'
 Plugin 'janko-m/vim-test'
-Plugin 'rakr/vim-one'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf'
 
 "highlights trailing and between/pre tab whitespaces
 "highlight whitespaces between/preceeding tabs
@@ -102,7 +106,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-colorscheme one
+colorscheme onehalfdark
 "let g:gruvbox_contrast_dark = 'medium'
 set background:dark
 set expandtab
@@ -177,4 +181,30 @@ nmap <Leader>f :NERDTreeFind<CR>
 nmap <Leader>r :NERDTreeRefreshRoot
 let g:gitgutter_async=0
 let NERDTreeShowHidden=1
+"needed so that vim still understands escape sequences (otherwise scrolling will go into insert mode, it will open with fzf lookup window, etc.)
+nnoremap <esc>^[ <esc>^[
+"fzf replacing ctrlp
+noremap <C-p> :FZF<CR>
+
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+"syntastic
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 2
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"Symbols
+"let g:syntastic_error_symbol = "❌"
+"let g:syntastic_warning_symbol = "∙∙"
+"let g:syntastic_style_error_symbol = '∙'
+"hi behind the symbols
+"hi SyntasticErrorSign ctermfg=243 ctermbg=236 guifg=#777777 guibg=darkgrey
+"JS
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+
+"ALE
+"let g:ale_sign_error = '👹'
+"let g:ale_sign_warning = '😬'
 
