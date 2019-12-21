@@ -29,7 +29,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'sonph/onehalf', { 'rtp': 'vim/' }
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -106,7 +105,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-colorscheme onehalfdark
+colorscheme gruvbox
 "let g:gruvbox_contrast_dark = 'medium'
 set background:dark
 set expandtab
