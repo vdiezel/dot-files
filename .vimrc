@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -29,10 +30,12 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'morhetz/gruvbox'
+"Plugin 'morhetz/gruvbox'
+Plugin 'sainnhe/gruvbox-material'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 "Plugin 'scrooloose/syntastic'
+Plugin 'doums/darcula'
 Plugin 'dense-analysis/ale'
 Plugin 'mxw/vim-jsx'
 Plugin 'sheerun/vim-polyglot'
@@ -44,7 +47,7 @@ Plugin 'janko-m/vim-test'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf'
-
+Plugin 'wfleming/vim-codeclimate'
 "highlights trailing and between/pre tab whitespaces
 "highlight whitespaces between/preceeding tabs
 hi ExtraWhitespace ctermbg=darkgrey
@@ -105,7 +108,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-colorscheme gruvbox
+colorscheme gruvbox-material
 "let g:gruvbox_contrast_dark = 'medium'
 set background:dark
 set expandtab
@@ -117,6 +120,7 @@ let g:indent_guides_guide_size=1
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+set laststatus=2
 " autocmd vimenter * NERDTree
 set undofile
 set undolevels=1000
@@ -206,4 +210,4 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 "ALE
 "let g:ale_sign_error = '👹'
 "let g:ale_sign_warning = '😬'
-
+let g:ale_set_highlights = 0

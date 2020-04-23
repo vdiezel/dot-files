@@ -1,0 +1,25 @@
+#!/bin/sh
+# Read user input, assign stdin to keyboard
+exec < /dev/tty
+status=$?
+while read -p "Do you want to run tests before execution? (Y/n) " yn; do
+    case $yn in
+        [Yy] ) npm run test; status=$? && break;;
+        [Nn] ) exit 0;;
+        * ) echo "Please answer y (yes) or n (no):" && continue;
+    esac
+done
+if [ $status -eq 0 ]
+then
+  echo "Executing command!"
+  exit 0
+else
+  while read -p "Tests failed. Do you want to execute nevertheless? (Y/n) " yn; do
+      case $yn in
+          [Yy] ) exit 0;;
+          [Nn] ) exit 1;;
+          * ) echo "Please answer y (yes) or n (no):" && continue;
+      esac
+  done
+fi
+

@@ -1,0 +1,13 @@
+[user]
+	name = Viktor Diezel
+	email = yyyyy.xxxx@zzz.dd
+
+[alias]
+  co = checkout
+  st = status
+  cane = commit --no-edit --amend
+[crendentials]
+	helper = cache --timeout=86400
+
+[fetch]
+    prune = true
