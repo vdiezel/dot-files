@@ -1,53 +1,8 @@
 set nocompatible              " be iMproved, required
 
 filetype off                  " required
+packadd gruvbox-material
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'morhetz/gruvbox'
-Plugin 'sainnhe/gruvbox-material'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-"Plugin 'scrooloose/syntastic'
-Plugin 'doums/darcula'
-Plugin 'dense-analysis/ale'
-Plugin 'mxw/vim-jsx'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'valloric/youcompleteme'
-Plugin 'itchyny/lightline.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'rking/ag.vim'
-Plugin 'janko-m/vim-test'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf'
-Plugin 'wfleming/vim-codeclimate'
 "highlights trailing and between/pre tab whitespaces
 "highlight whitespaces between/preceeding tabs
 hi ExtraWhitespace ctermbg=darkgrey
@@ -94,20 +49,11 @@ nnoremap <leader>l :w \| :call <SID>RunVimTest('TestLast')<cr>
 
 let test#javascript#jest#file_pattern = '\vtest?/.*\.(js|jsx|coffee)$'
 let test#javascript#jest#executable = 'npm run test'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 colorscheme gruvbox-material
 "let g:gruvbox_contrast_dark = 'medium'
 set background:dark
@@ -131,29 +77,6 @@ set backupcopy=yes
 let g:user_emmet_leader_key=','
 set incsearch
 set hlsearch
-" Remove newbie crutches in Command Mode
-"cnoremap <Down> <Nop>
-"cnoremap <Left> <Nop>
-"cnoremap <Right> <Nop>
-"cnoremap <Up> <Nop>
-
-" Remove newbie crutches in Insert Mode
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <Up> <Nop>
-
-" Remove newbie crutches in Normal Mode
-nnoremap <Down> <Nop>
-nnoremap <Left> <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Up> <Nop>
-
-" Remove newbie crutches in Visual Mode
-vnoremap <Down> <Nop>
-vnoremap <Left> <Nop>
-vnoremap <Right> <Nop>
-vnoremap <Up> <Nop>
 
 set cursorline "highlights line cursor is on
 set scrolloff=5
@@ -210,4 +133,6 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 "ALE
 "let g:ale_sign_error = '👹'
 "let g:ale_sign_warning = '😬'
-let g:ale_set_highlights = 0
+" set path for FZF
+set rtp+=~/.fzf
+
