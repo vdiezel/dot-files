@@ -26,7 +26,8 @@ git clone https://github.com/dense-analysis/ale.git ~/.vim/pack/bundle/start/ale
 
 # FZF
 sudo apt-get install fzf
-git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/bundle/start/fzf.vim
+# git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/bundle/start/fzf.vim
+git clone https://github.com/junegunn/fzf ~/.fzf && cd ~/.fzf && ./install
 
 # rest
 git clone https://github.com/sainnhe/gruvbox-material.git ~/.vim/pack/bundle/start/gruvbox-material
