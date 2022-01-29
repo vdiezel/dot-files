@@ -19,7 +19,7 @@ mkdir -p ~/.vim/pack/bundle/start
 # Silversurfer requires ag installed
 
 sudo apt-get install silversearcher-ag
-git clone https://github.com/rking/ag.vim 
+git clone https://github.com/rking/ag.vim ~/.vim/pack/bundle/start/ag.vim
 
 # ALE
 git clone https://github.com/dense-analysis/ale.git ~/.vim/pack/bundle/start/ale
