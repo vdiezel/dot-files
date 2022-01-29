@@ -135,7 +135,7 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 "let g:ale_sign_warning = '😬'
 " set path for FZF
 set rtp+=~/.fzf
-g:ale_set_highlights
+let g:ale_set_highlights='-'
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
