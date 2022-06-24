@@ -3,6 +3,11 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 packadd gruvbox-material
 
+if !has('gui_running') && has('termguicolors')
+  " Use true colors (recommended)
+  set termguicolors
+endif
+
 "highlights trailing and between/pre tab whitespaces
 "highlight whitespaces between/preceeding tabs
 hi ExtraWhitespace ctermbg=darkgrey
@@ -54,9 +59,13 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
+set background:dark
+
+"colorscheme solarized
+"colorscheme stellarized
+"colorscheme spaceduck
 colorscheme gruvbox-material
 "let g:gruvbox_contrast_dark = 'medium'
-set background:dark
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -139,3 +148,6 @@ let g:ale_set_highlights='-'
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
+
+" for vim/devicons
+set encoding=UTF-8
