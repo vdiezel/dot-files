@@ -43,4 +43,4 @@ git clone https://github.com/mxw/vim-jsx.git ~/.vim/pack/bundle/start/vim-jsx
 git clone https://github.com/sheerun/vim-polyglot.git ~/.vim/pack/bundle/start/vim-polyglot
 git clone https://github.com/tpope/vim-surround.git ~/.vim/pack/bundle/start/vim-surround
 git clone https://github.com/vim-test/vim-test.git ~/.vim/pack/bundle/start/vim-test
-
+git clone ttps://github.com/ryanoasis/vim-devicons.git
