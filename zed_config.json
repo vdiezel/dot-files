@@ -1,0 +1,40 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+{
+  "ui_font_size": 18,
+  "buffer_font_family": "JetBrainsMonoMedium NF",
+  "buffer_font_size": 16,
+  "buffer_font_weight": 500,
+  "project_panel": {
+    "dock": "right"
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Gruvbox Dark Hard"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "vim_mode": true,
+  "languages": {
+    "JavaScript": {
+      "tab_size": 2,
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    }
+  },
+  "scrollbar": { "show": "never" }
+}
