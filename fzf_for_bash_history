@@ -1,0 +1,4 @@
+# Add this to ~/.bashrc
+if command -v fzf >/dev/null; then
+  bind -x '"\C-r": "history | fzf --tac | cut -c 8- | read -e cmd; [[ -n $cmd ]] && READLINE_LINE=$cmd READLINE_POINT=${#cmd}"'
+fi
