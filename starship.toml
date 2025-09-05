@@ -1,0 +1,10 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = "$directory [$git_branch]($style) $character"
+
+[git_branch]
+format = "[$symbol$branch](purple)"  # only shows when inside a git repo
+
+[directory]
+format = "[/$path]($style)"  # only shows when inside a git repo
